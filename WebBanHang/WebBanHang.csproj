@@ -131,10 +131,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\QuanLyBanHang.mdf" />
+    <Content Include="App_Data\QuanLyBanHang_log.ldf">
+      <DependentUpon>QuanLyBanHang.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\marketing-1.png" />
     <Content Include="Content\img\slider-1.jpg" />
     <Content Include="Content\img\slider-2.jpg" />
     <Content Include="Content\img\slider-3.jpg" />
@@ -176,9 +181,11 @@
     <Content Include="Views\Page\_HomeSlider.cshtml" />
     <Content Include="Views\Page\_HomeMarketing.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Page\DangNhap.cshtml" />
+    <Content Include="Views\Page\DangKy.cshtml" />
+    <Content Include="Views\Page\SanPham.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Account\" />
     <Folder Include="Views\Order\" />

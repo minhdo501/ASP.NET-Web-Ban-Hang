@@ -27,5 +27,33 @@ namespace WebBanHang.Controllers
 
             return View();
         }
+
+        public ActionResult DangNhap()
+        {
+            ViewBag.Message = "Đây là trang đăng nhập...";
+
+            return View();
+        }
+
+        public ActionResult DangKy()
+        {
+            ViewBag.Message = "Đây là trang đăng ký...";
+
+            return View();
+        }
+
+        public ActionResult DieuKhoan()
+        {
+            ViewBag.Message = "Đây là trang đăng ký...";
+
+            return View();
+        }
+
+        public ActionResult SanPham()
+        {
+            ViewBag.Message = "Đây là trang sản phẩm...";
+
+            return View();
+        }
     }
 }
