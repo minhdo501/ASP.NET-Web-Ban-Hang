@@ -148,3 +148,7 @@ C:\Users\MyPC\source\repos\ASP.NET-Web-Ban-Hang\WebBanHang\obj\Debug\WebBanHang.
 C:\Users\MyPC\source\repos\ASP.NET-Web-Ban-Hang\WebBanHang\obj\Debug\WebBanHang.csproj.CopyComplete
 C:\Users\MyPC\source\repos\ASP.NET-Web-Ban-Hang\WebBanHang\obj\Debug\WebBanHang.dll
 C:\Users\MyPC\source\repos\ASP.NET-Web-Ban-Hang\WebBanHang\obj\Debug\WebBanHang.pdb
+C:\Users\MyPC\source\repos\ASP.NET-Web-Ban-Hang\WebBanHang\bin\EntityFramework.dll
+C:\Users\MyPC\source\repos\ASP.NET-Web-Ban-Hang\WebBanHang\bin\EntityFramework.SqlServer.dll
+C:\Users\MyPC\source\repos\ASP.NET-Web-Ban-Hang\WebBanHang\bin\EntityFramework.xml
+C:\Users\MyPC\source\repos\ASP.NET-Web-Ban-Hang\WebBanHang\bin\EntityFramework.SqlServer.xml

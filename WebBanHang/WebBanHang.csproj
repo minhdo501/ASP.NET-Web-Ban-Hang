@@ -45,10 +45,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -125,6 +133,36 @@
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="EF\customers.cs">
+      <DependentUpon>QuanLyBanHangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\employees.cs">
+      <DependentUpon>QuanLyBanHangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\orders.cs">
+      <DependentUpon>QuanLyBanHangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\order_details.cs">
+      <DependentUpon>QuanLyBanHangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\products.cs">
+      <DependentUpon>QuanLyBanHangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\QuanLyBanHangModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyBanHangModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\QuanLyBanHangModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyBanHangModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\QuanLyBanHangModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyBanHangModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -143,12 +181,29 @@
     <Content Include="Content\img\slider-1.jpg" />
     <Content Include="Content\img\slider-2.jpg" />
     <Content Include="Content\img\slider-3.jpg" />
+    <Content Include="EF\QuanLyBanHangModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLyBanHangModel.edmx</DependentUpon>
+      <LastGenOutput>QuanLyBanHangModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EF\QuanLyBanHangModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLyBanHangModel.edmx</DependentUpon>
+      <LastGenOutput>QuanLyBanHangModel.cs</LastGenOutput>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="EF\QuanLyBanHangModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QuanLyBanHangModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="EF\QuanLyBanHangModel.edmx.diagram">
+      <DependentUpon>QuanLyBanHangModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -204,6 +259,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

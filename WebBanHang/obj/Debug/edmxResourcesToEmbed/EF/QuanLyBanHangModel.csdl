@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanLyBanHangModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="customers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="address1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="address2" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="postal_code" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="orders" Relationship="Self.fk_orders__customers" FromRole="customers" ToRole="orders" />
+  </EntityType>
+  <EntityType Name="employees">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="avatar" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="job_title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="department" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="manager_id" Type="Int32" />
+    <Property Name="phone" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="address1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="address2" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="postal_code" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="orders" Relationship="Self.fk_orders__employees" FromRole="employees" ToRole="orders" />
+  </EntityType>
+  <EntityType Name="order_details">
+    <Key>
+      <PropertyRef Name="order_id" />
+      <PropertyRef Name="product_id" />
+    </Key>
+    <Property Name="order_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="product_id" Type="Int32" Nullable="false" />
+    <Property Name="quantity" Type="Decimal" Precision="18" Scale="4" Nullable="false" />
+    <Property Name="unit_price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="discount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="order_detail_status" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="date_allocated" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="orders" Relationship="Self.fk_order_details__orders" FromRole="order_details" ToRole="orders" />
+    <NavigationProperty Name="products" Relationship="Self.fk_order_details__products" FromRole="order_details" ToRole="products" />
+  </EntityType>
+  <EntityType Name="orders">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="employee_id" Type="Int32" />
+    <Property Name="customer_id" Type="Int32" />
+    <Property Name="order_date" Type="DateTime" Precision="3" />
+    <Property Name="shipped_date" Type="DateTime" Precision="3" />
+    <Property Name="ship_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ship_address1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ship_address2" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ship_city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ship_state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ship_postal_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ship_country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="shipping_fee" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="payment_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="paid_date" Type="DateTime" Precision="3" />
+    <Property Name="order_status" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="customers" Relationship="Self.fk_orders__customers" FromRole="orders" ToRole="customers" />
+    <NavigationProperty Name="employees" Relationship="Self.fk_orders__employees" FromRole="orders" ToRole="employees" />
+    <NavigationProperty Name="order_details" Relationship="Self.fk_order_details__orders" FromRole="orders" ToRole="order_details" />
+  </EntityType>
+  <EntityType Name="products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="product_code" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="product_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="standard_cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="list_price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="target_level" Type="Int32" />
+    <Property Name="reorder_level" Type="Int32" />
+    <Property Name="minimum_reorder_quantity" Type="Int32" />
+    <Property Name="quantity_per_unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="discontinued" Type="Byte" Nullable="false" />
+    <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="order_details" Relationship="Self.fk_order_details__products" FromRole="products" ToRole="order_details" />
+  </EntityType>
+  <Association Name="fk_orders__customers">
+    <End Role="customers" Type="Self.customers" Multiplicity="0..1" />
+    <End Role="orders" Type="Self.orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customers">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="orders">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_orders__employees">
+    <End Role="employees" Type="Self.employees" Multiplicity="0..1" />
+    <End Role="orders" Type="Self.orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="employees">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="orders">
+        <PropertyRef Name="employee_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_order_details__orders">
+    <End Role="orders" Type="Self.orders" Multiplicity="1" />
+    <End Role="order_details" Type="Self.order_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="orders">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="order_details">
+        <PropertyRef Name="order_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_order_details__products">
+    <End Role="products" Type="Self.products" Multiplicity="1" />
+    <End Role="order_details" Type="Self.order_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="products">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="order_details">
+        <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QuanLyBanHangEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="customers" EntityType="Self.customers" />
+    <EntitySet Name="employees" EntityType="Self.employees" />
+    <EntitySet Name="order_details" EntityType="Self.order_details" />
+    <EntitySet Name="orders" EntityType="Self.orders" />
+    <EntitySet Name="products" EntityType="Self.products" />
+    <AssociationSet Name="fk_orders__customers" Association="Self.fk_orders__customers">
+      <End Role="customers" EntitySet="customers" />
+      <End Role="orders" EntitySet="orders" />
+    </AssociationSet>
+    <AssociationSet Name="fk_orders__employees" Association="Self.fk_orders__employees">
+      <End Role="employees" EntitySet="employees" />
+      <End Role="orders" EntitySet="orders" />
+    </AssociationSet>
+    <AssociationSet Name="fk_order_details__orders" Association="Self.fk_order_details__orders">
+      <End Role="orders" EntitySet="orders" />
+      <End Role="order_details" EntitySet="order_details" />
+    </AssociationSet>
+    <AssociationSet Name="fk_order_details__products" Association="Self.fk_order_details__products">
+      <End Role="products" EntitySet="products" />
+      <End Role="order_details" EntitySet="order_details" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
