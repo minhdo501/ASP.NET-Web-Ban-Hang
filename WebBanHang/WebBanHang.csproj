@@ -170,14 +170,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\QuanLyBanHang.mdf" />
+    <Content Include="App_Data\QuanLyBanHang.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="App_Data\QuanLyBanHang_log.ldf">
       <DependentUpon>QuanLyBanHang.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\112815953-stock-vector-no-image-available-icon-flat-vector.jpg" />
     <Content Include="Content\img\marketing-1.png" />
     <Content Include="Content\img\slider-1.jpg" />
     <Content Include="Content\img\slider-2.jpg" />
@@ -207,6 +211,7 @@
       <DependentUpon>QuanLyBanHangModel.edmx</DependentUpon>
     </Content>
     <Content Include="DocumentFiles\Bảng báo giá tháng 11.docx" />
+    <Content Include="Content\img\1024px-No_image_available.svg.webp" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -245,6 +250,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="UploadedFiles\ProductImages\" />
     <Folder Include="Views\Account\" />
     <Folder Include="Views\Order\" />
     <Folder Include="Views\Product\" />

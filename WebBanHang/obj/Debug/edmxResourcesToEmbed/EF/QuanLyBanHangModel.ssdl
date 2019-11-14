@@ -88,6 +88,7 @@
     <Property Name="quantity_per_unit" Type="nvarchar" MaxLength="50" />
     <Property Name="discontinued" Type="tinyint" Nullable="false" />
     <Property Name="category" Type="nvarchar" MaxLength="50" />
+    <Property Name="image" Type="text" />
   </EntityType>
   <Association Name="fk_order_details__orders">
     <End Role="orders" Type="Self.orders" Multiplicity="1" />

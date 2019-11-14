@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebBanHang.EF;
 
 namespace WebBanHang.Controllers
 {
@@ -11,6 +12,8 @@ namespace WebBanHang.Controllers
         // GET: Page
         public ActionResult Index()
         {
+            
+
             return View();
         }
 
@@ -51,8 +54,16 @@ namespace WebBanHang.Controllers
 
         public ActionResult SanPham()
         {
-            ViewBag.Message = "Đây là trang sản phẩm...";
+            List<products> lstProduct = new List<products>();
 
+            // Lấy dữ liệu danh sách sản phẩm
+            using (QuanLyBanHangEntities context = new QuanLyBanHangEntities())
+            {
+                lstProduct = context.products.ToList();// SELECT * FROM products
+            }
+
+            // Truyền dữ liệu từ Controller -> View thông qua Viewbag
+            ViewBag.DanhSachSanPham = lstProduct;
             return View();
         }
     }

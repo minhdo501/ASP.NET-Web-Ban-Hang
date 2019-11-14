@@ -79,18 +79,19 @@
     <EntitySetMapping Name="products">
       <EntityTypeMapping TypeName="QuanLyBanHangModel.products">
         <MappingFragment StoreEntitySet="products">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="product_code" ColumnName="product_code" />
-          <ScalarProperty Name="product_name" ColumnName="product_name" />
-          <ScalarProperty Name="description" ColumnName="description" />
-          <ScalarProperty Name="standard_cost" ColumnName="standard_cost" />
-          <ScalarProperty Name="list_price" ColumnName="list_price" />
-          <ScalarProperty Name="target_level" ColumnName="target_level" />
-          <ScalarProperty Name="reorder_level" ColumnName="reorder_level" />
-          <ScalarProperty Name="minimum_reorder_quantity" ColumnName="minimum_reorder_quantity" />
-          <ScalarProperty Name="quantity_per_unit" ColumnName="quantity_per_unit" />
-          <ScalarProperty Name="discontinued" ColumnName="discontinued" />
+          <ScalarProperty Name="image" ColumnName="image" />
           <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="discontinued" ColumnName="discontinued" />
+          <ScalarProperty Name="quantity_per_unit" ColumnName="quantity_per_unit" />
+          <ScalarProperty Name="minimum_reorder_quantity" ColumnName="minimum_reorder_quantity" />
+          <ScalarProperty Name="reorder_level" ColumnName="reorder_level" />
+          <ScalarProperty Name="target_level" ColumnName="target_level" />
+          <ScalarProperty Name="list_price" ColumnName="list_price" />
+          <ScalarProperty Name="standard_cost" ColumnName="standard_cost" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="product_name" ColumnName="product_name" />
+          <ScalarProperty Name="product_code" ColumnName="product_code" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

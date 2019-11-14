@@ -1,4 +1,6 @@
-﻿@{
+﻿@using WebBanHang.EF
+
+@{
     ViewBag.Title = "Trang chủ";
 }
 <h1> Đây là trang chủ </h1>
@@ -10,3 +12,8 @@
 <!-- Home Marketing -->
 @Html.Partial("~/Views/Page/_HomeMarketing.cshtml")
 <!-- End Home Marketing -->
+
+@foreach(products sanpham in ViewBag.Danhsachsanpham)
+{
+    <p>@sanpham.product_name - @sanpham.standard_cost</p>
+}
