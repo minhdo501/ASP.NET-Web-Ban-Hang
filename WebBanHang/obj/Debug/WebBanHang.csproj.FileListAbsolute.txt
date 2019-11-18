@@ -152,3 +152,5 @@ C:\Users\MyPC\source\repos\ASP.NET-Web-Ban-Hang\WebBanHang\bin\EntityFramework.d
 C:\Users\MyPC\source\repos\ASP.NET-Web-Ban-Hang\WebBanHang\bin\EntityFramework.SqlServer.dll
 C:\Users\MyPC\source\repos\ASP.NET-Web-Ban-Hang\WebBanHang\bin\EntityFramework.xml
 C:\Users\MyPC\source\repos\ASP.NET-Web-Ban-Hang\WebBanHang\bin\EntityFramework.SqlServer.xml
+C:\Users\MyPC\source\repos\ASP.NET-Web-Ban-Hang\WebBanHang\bin\App_Data\QuanLyBanHang.mdf
+C:\Users\MyPC\source\repos\ASP.NET-Web-Ban-Hang\WebBanHang\bin\App_Data\QuanLyBanHang_log.ldf

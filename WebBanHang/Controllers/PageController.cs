@@ -12,8 +12,6 @@ namespace WebBanHang.Controllers
         // GET: Page
         public ActionResult Index()
         {
-            
-
             return View();
         }
 

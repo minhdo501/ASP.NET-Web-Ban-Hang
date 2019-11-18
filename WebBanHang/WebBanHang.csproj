@@ -186,6 +186,7 @@
     <Content Include="Content\img\slider-1.jpg" />
     <Content Include="Content\img\slider-2.jpg" />
     <Content Include="Content\img\slider-3.jpg" />
+    <Content Include="Content\ProductDetailStyle.css" />
     <Content Include="DocumentFiles\BangBaoGiaThang11.txt" />
     <Content Include="EF\QuanLyBanHangModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -247,13 +248,13 @@
     <Content Include="Views\Page\DangNhap.cshtml" />
     <Content Include="Views\Page\DangKy.cshtml" />
     <Content Include="Views\Page\SanPham.cshtml" />
+    <Content Include="Views\Product\ProductDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="UploadedFiles\ProductImages\" />
     <Folder Include="Views\Account\" />
     <Folder Include="Views\Order\" />
-    <Folder Include="Views\Product\" />
     <Folder Include="Views\Search\" />
   </ItemGroup>
   <ItemGroup>

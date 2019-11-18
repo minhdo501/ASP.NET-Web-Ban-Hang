@@ -54,11 +54,11 @@ namespace WebBanHang
             );
 
             // Route mặc định của trang Chi tiết sản phẩm
-            // URL: /product-detail
+            // URL: /chitiet-sanpham
             routes.MapRoute(
-                name: "page.product_detail",
-                url: "chitiet-sanpham",
-                defaults: new { controller = "Page", action = "ProductDetail(int id)" }
+                name: "product.product_detail", // Controller.Tên biến
+                url: "chitiet-sanpham", // URL định danh
+                defaults: new { controller = "Product", action = "ProductDetail" }
             );
 
             // Route mặc định của trang Sản phẩm
