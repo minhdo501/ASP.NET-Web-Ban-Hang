@@ -99,6 +99,25 @@ namespace WebBanHang
                 defaults: new { controller = "Page", action = "DieuKhoan" }
             );
 
+            // --- ROUTE DÀNH CHO BACK END ---
+            // Route trang sản phẩm chi tiết
+            // URL: /dashboard
+            routes.MapRoute(
+                name: "admin.dashboard",
+                url: "admin/dashboard",
+                defaults: new { controller = "Dashboard", action = "Index" },
+                namespaces: new string[] { "WebBanHang.Controllers.Backend" }
+            );
+
+            // Route trang sản phẩm
+            // URL: /products
+            routes.MapRoute(
+                name: "admin.products",
+                url: "admin/products",
+                defaults: new { controller = "Products", action = "Index" },
+                namespaces: new string[] { "WebBanHang.Controllers.Backend" }
+            );
+
             // Route mặc định của trang Web
             // URL: /
             routes.MapRoute(
