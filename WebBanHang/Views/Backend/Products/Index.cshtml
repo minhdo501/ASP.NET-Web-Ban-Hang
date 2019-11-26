@@ -16,22 +16,22 @@
             Ảnh đại diện
         </th>
         <th>
-            Tên sản phẩm
+            Mã sản phẩm
         </th>
         <th>
-            Giá niêm yết
+            Tên sản phẩm
         </th>
         <th>
             Giá bán
         </th>
         <th>
-            Đơn giá
+            Giá gốc
+        </th>
+        <th>
+            discontinued
         </th>
         <th>
             Loại sản phẩm
-        </th>
-        <th>
-            Sản phẩm
         </th>
         <th></th>
     </tr>
@@ -55,25 +55,10 @@
             @Html.DisplayFor(modelItem => item.product_name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.description)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.standard_cost)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.list_price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.target_level)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.reorder_level)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.minimum_reorder_quantity)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.quantity_per_unit)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.discontinued)
@@ -81,9 +66,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.category)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.image)
-        </td>
+
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
             @Html.ActionLink("Details", "Details", new { id=item.id }) |

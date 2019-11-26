@@ -127,6 +127,15 @@ namespace WebBanHang
                 namespaces: new string[] { "WebBanHang.Controllers.Backend" }
             );
 
+            // Route trang sửa sản phẩm
+            // URL: /products/edit
+            routes.MapRoute(
+                name: "admin.products.edit",
+                url: "admin/products/edit/{id}",
+                defaults: new { controller = "Products", action = "Edit" },
+                namespaces: new string[] { "WebBanHang.Controllers.Backend" }
+            );
+
             // Route mặc định của trang Web
             // URL: /
             routes.MapRoute(
