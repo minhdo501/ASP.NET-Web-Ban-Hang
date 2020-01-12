@@ -1,0 +1,130 @@
+﻿@model WebBanHang.EF.products
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Backend/Shared/_Layout.cshtml";
+}
+
+<h2>Thêm mới sản phẩm</h2>
+
+<!-- QUAN TRỌNG -->
+@using (Html.BeginForm("Create", "Products", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Sản phẩm</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <label>Mã sản phẩm</label>
+            <div class="col-md-10">
+                <input type="text" name="product_code" id="product_code" class="form-control" placeholder="Nhập mã sản phẩm" />
+                @Html.ValidationMessageFor(model => model.product_code, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Tên sản phẩm</label>
+            <div class="col-md-10">
+                <input type="text" name="product_name" id="product_name" class="form-control" placeholder="Nhập tên sản phẩm" />
+                @Html.ValidationMessageFor(model => model.product_name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Mô tả</label>
+            <div class="col-md-10">
+                <input type="text" name="description" id="description" class="form-control" placeholder="Nhập mô tả sản phẩm" />
+                @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Giá gốc</label>
+            <div class="col-md-10">
+                <input type="text" name="standard_cost" id="standard_cost" class="form-control" placeholder="Nhập giá gốc sản phẩm" />
+                @Html.ValidationMessageFor(model => model.standard_cost, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Giá</label>
+            <div class="col-md-10">
+                <input type="text" name="list_price" id="list_price" class="form-control" placeholder="Nhập giá sản phẩm" />
+                @Html.ValidationMessageFor(model => model.list_price, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Mục tiêu</label>
+            <div class="col-md-10">
+                <input type="text" name="target_level" id="target_level" class="form-control" placeholder="Nhập mục tiêu sản phẩm" />
+                @Html.ValidationMessageFor(model => model.target_level, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Mức độ đặt hàng</label>
+            <div class="col-md-10">
+                <input type="text" name="reorder_level" id="reorder_level" class="form-control" />
+                @Html.ValidationMessageFor(model => model.reorder_level, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Số lượng đặt hàng tối thiểu</label>
+            <div class="col-md-10">
+                <input type="text" name="minimum_reorder_quantity" id="minimum_reorder_quantity" class="form-control" />
+                @Html.ValidationMessageFor(model => model.minimum_reorder_quantity, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Đơn giá</label>
+            <div class="col-md-10">
+                <input type="text" name="quantity_per_unit" id="quantity_per_unit" class="form-control" />
+                @Html.ValidationMessageFor(model => model.quantity_per_unit, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Ngừng sản xuất</label>
+            <div class="col-md-10">
+                <input type="text" name="discontinued" id="discontinued" class="form-control" />
+                @Html.ValidationMessageFor(model => model.discontinued, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Loại sản phẩm</label>
+            <div class="col-md-10">
+                <input type="text" name="category" id="category" class="form-control" />
+                @Html.ValidationMessageFor(model => model.category, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Hình đại diện sản phẩm</label>
+            <div class="col-md-10">
+                <input type="file" name="image" id="image" class="form-group"/>
+                @Html.ValidationMessageFor(model => model.image, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Lưu sản phẩm" class="btn btn-danger" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

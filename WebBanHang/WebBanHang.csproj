@@ -215,6 +215,7 @@
     </Content>
     <Content Include="DocumentFiles\Bảng báo giá tháng 11.docx" />
     <Content Include="Content\img\1024px-No_image_available.svg.webp" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

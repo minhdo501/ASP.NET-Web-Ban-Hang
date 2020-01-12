@@ -154,6 +154,7 @@ namespace WebBanHang.Controllers.Backend
                         string _path = Path.Combine(uploadFolderPath, _FileName);
                         image.SaveAs(_path);
                     }
+                    // Lưu tên file vào database
                     products.image = _FileName;
                 }
 
@@ -181,8 +182,9 @@ namespace WebBanHang.Controllers.Backend
             {
                 return HttpNotFound();
             }
-            ViewBag.Products = products;
             return View(products);
+            ViewBag.Products = products;
+            return View("~/Views/Backend/Products/Delete.cshtml", products);
         }
 
         // POST: Products/Delete/5

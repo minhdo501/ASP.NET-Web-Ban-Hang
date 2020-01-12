@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QuanLyBanHangModelStoreContainer" CdmEntityContainer="QuanLyBanHangEntities">
+    <EntitySetMapping Name="customers">
+      <EntityTypeMapping TypeName="QuanLyBanHangModel.customers">
+        <MappingFragment StoreEntitySet="customers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="address1" ColumnName="address1" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="postal_code" ColumnName="postal_code" />
+          <ScalarProperty Name="country" ColumnName="country" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="employees">
+      <EntityTypeMapping TypeName="QuanLyBanHangModel.employees">
+        <MappingFragment StoreEntitySet="employees">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="avatar" ColumnName="avatar" />
+          <ScalarProperty Name="job_title" ColumnName="job_title" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="manager_id" ColumnName="manager_id" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="address1" ColumnName="address1" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="postal_code" ColumnName="postal_code" />
+          <ScalarProperty Name="country" ColumnName="country" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="order_details">
+      <EntityTypeMapping TypeName="QuanLyBanHangModel.order_details">
+        <MappingFragment StoreEntitySet="order_details">
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="unit_price" ColumnName="unit_price" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="order_detail_status" ColumnName="order_detail_status" />
+          <ScalarProperty Name="date_allocated" ColumnName="date_allocated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orders">
+      <EntityTypeMapping TypeName="QuanLyBanHangModel.orders">
+        <MappingFragment StoreEntitySet="orders">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="order_date" ColumnName="order_date" />
+          <ScalarProperty Name="shipped_date" ColumnName="shipped_date" />
+          <ScalarProperty Name="ship_name" ColumnName="ship_name" />
+          <ScalarProperty Name="ship_address1" ColumnName="ship_address1" />
+          <ScalarProperty Name="ship_address2" ColumnName="ship_address2" />
+          <ScalarProperty Name="ship_city" ColumnName="ship_city" />
+          <ScalarProperty Name="ship_state" ColumnName="ship_state" />
+          <ScalarProperty Name="ship_postal_code" ColumnName="ship_postal_code" />
+          <ScalarProperty Name="ship_country" ColumnName="ship_country" />
+          <ScalarProperty Name="shipping_fee" ColumnName="shipping_fee" />
+          <ScalarProperty Name="payment_type" ColumnName="payment_type" />
+          <ScalarProperty Name="paid_date" ColumnName="paid_date" />
+          <ScalarProperty Name="order_status" ColumnName="order_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products">
+      <EntityTypeMapping TypeName="QuanLyBanHangModel.products">
+        <MappingFragment StoreEntitySet="products">
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="discontinued" ColumnName="discontinued" />
+          <ScalarProperty Name="quantity_per_unit" ColumnName="quantity_per_unit" />
+          <ScalarProperty Name="minimum_reorder_quantity" ColumnName="minimum_reorder_quantity" />
+          <ScalarProperty Name="reorder_level" ColumnName="reorder_level" />
+          <ScalarProperty Name="target_level" ColumnName="target_level" />
+          <ScalarProperty Name="list_price" ColumnName="list_price" />
+          <ScalarProperty Name="standard_cost" ColumnName="standard_cost" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="product_name" ColumnName="product_name" />
+          <ScalarProperty Name="product_code" ColumnName="product_code" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
